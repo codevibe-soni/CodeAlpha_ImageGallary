@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image-Gallery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>Image Gallery</h1>
+      </header>
+
+      <!-- Nav-bar -->
+      <nav>
+        <a href="#" data-filter="all">All</a>
+        <a href="#" data-filter="nature">Nature</a>
+        <a href="#" data-filter="city">City</a>
+        <a href="#" data-filter="animal">Animal</a>
+        <a href="#" data-filter="universe">Universe</a>
+      </nav>
+
+      <!-- card Section -->
+      <div class="grid-container">
+        <div class="images" data-category="nature" ><img src="./Assets/nature1.jpg" alt="" /></div>
+        <div class="images" data-category="animal" ><img src="./Assets/animal1.jpg" alt="" /></div>
+        <div class="images" data-category="city" ><img src="./Assets/city1.jpg" alt="" /></div>
+        <div class="images" data-category="universe" ><img src="./Assets/universe1.jpg" alt="" /></div>
+        <div class="images" data-category="nature" ><img src="./Assets/nature2.jpg" alt="" /></div>
+        <div class="images" data-category="animal" ><img src="./Assets/animal2.jpg" alt="" /></div>
+        <div class="images" data-category="city" ><img src="./Assets/city2.jpg" alt="" /></div>
+        <div class="images" data-category="universe" ><img src="./Assets/universe2.jpg" alt="" /></div>
+        <div class="images" data-category="nature" ><img src="./Assets/nature3.jpg" alt="" /></div>
+        <div class="images" data-category="animal" ><img src="./Assets/animal3.jpg" alt="" /></div>
+        <div class="images" data-category="city" ><img src="./Assets/city3.jpg" alt="" /></div>
+        <div class="images" data-category="universe" ><img src="./Assets/universe3.jpg" alt="" /></div>
+        <div class="images" data-category="nature" ><img src="./Assets/nature4.jpg" alt="" /></div>
+        <div class="images" data-category="animal" ><img src="./Assets/animal4.jpg" alt="" /></div>
+        <div class="images" data-category="city" ><img src="./Assets/city4.jpg" alt="" /></div>
+        <div class="images" data-category="universe" ><img src="./Assets/universe4.jpg" alt="" /></div>
+        <div class="images" data-category="nature" ><img src="./Assets/nature5.jpg" alt="" /></div>
+        <div class="images" data-category="animal" ><img src="./Assets/animal5.jpg" alt="" /></div>
+        <div class="images" data-category="city" ><img src="./Assets/city5.jpg" alt="" /></div>
+        <div class="images" data-category="universe" ><img src="./Assets/universe5.jpg" alt="" /></div>
+        <div class="images" data-category="nature" ><img src="./Assets/nature6.jpg" alt="" /></div>
+        <div class="images" data-category="nature" ><img src="./Assets/nature7.jpg" alt="" /></div>
+      </div>
+
+      <!-- footer-Section -->
+      <footer class="footer">
+          <p>"Discover the beauty through every Image"</p>
+          <h5>Image Gallery</h5>
+          <p>&copy;Soni Rastogi</p>
+
+        <div class="links">
+          <div class="git">
+            <a href="https://github.com/codevibe-soni"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </div>
+          <div class="linkdin">
+            <a href="https://www.linkedin.com/in/soni-rastogi-79b7b3350/"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Light-box Section -->
+
+    <div class="lightbox">
+      <!-- close -->
+      <button class="close"><i class="fa-solid fa-xmark "></i></button>
+
+      <!-- previous -->
+      <button class="previous">
+        <i class="fa-solid fa-chevron-left prev"></i>
+      </button>
+
+      <!-- image -->
+      <img src="" alt="" class="largeimage">
+
+      <!-- next -->
+      <button class="next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
