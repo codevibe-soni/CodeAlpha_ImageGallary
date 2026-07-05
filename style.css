@@ -52,6 +52,7 @@ nav a{
 nav a:hover{
     opacity: 1;
     pointer-events: auto;
+    transform: scale(1.1);
 }
 
 .grid-container{
@@ -72,7 +73,7 @@ nav a:hover{
    }
 
    .images img:hover{
-    transform: translateY(-8px) scale(1.08);
+    transform: translateY(-8px) scale(1.05);
      box-shadow:0 12px 25px rgba(238, 231, 231, 0.15);
    }
 
@@ -259,7 +260,7 @@ nav{
     gap: 0.3rem;
     height: auto;
  }
-}
+
 
 .footer{
     display: flex;
@@ -290,4 +291,14 @@ nav{
 .close i{
     font-size: 1.5rem;
 }
+button{
+    height:2.3rem;
+    width:2.3rem;
+    background-color:black;
+    border: none;
+    border-radius: 50%;
+  
+}
 
+
+}
