@@ -1,81 +1,79 @@
 const images = document.querySelectorAll(".images img");
-
-let lightImage = document.querySelector(".lightbox");
-
-let largeImage = document.querySelector(".largeimage");
-
+const lightImage = document.querySelector(".lightbox");
+const largeImage = document.querySelector(".largeimage");
 const closebtn = document.querySelector(".close");
-
 const prevbtn = document.querySelector(".previous");
-
 const nextbtn = document.querySelector(".next");
-
 const navLinks = document.querySelectorAll("nav a");
-
 const imageCards = document.querySelectorAll(".images");
 
 let currentIndx = 0;
 
+// Initially all images are visible
+let visibleImages = [...images];
 
-// click event
-images.forEach((image,index) =>{
+// Image Click Event
+images.forEach((image) => {
+    image.addEventListener("click", () => {
+        lightImage.style.display = "flex";
+        largeImage.src = image.src;
 
-image.addEventListener("click",function(){
-lightImage.style.display = "flex";
-largeImage.src = image.src;
- currentIndx = index;
-
-});
-});
-
-prevbtn.addEventListener("click",()=>{
-
-    if( currentIndx === 0){
-        currentIndx = images.length-1;
-    }else{
-    currentIndx--;
-    }
-     largeImage.src = images[currentIndx].src;
-
-     });
-
-    nextbtn.addEventListener("click",()=>{
-       if(currentIndx === images.length-1 ){
-        currentIndx = 0;
-        }else{
-            currentIndx++;
-        }
-    largeImage.src = images[currentIndx].src;
+        // Find index in currently visible images
+        currentIndx = visibleImages.indexOf(image);
     });
+});
 
+// Previous Button
+prevbtn.addEventListener("click", () => {
+    if (currentIndx === 0) {
+        currentIndx = visibleImages.length - 1;
+    } else {
+        currentIndx--;
+    }
 
-    closebtn.addEventListener("click",()=>{
-        lightImage.style.display = "none";
-    })
+    largeImage.src = visibleImages[currentIndx].src;
+});
 
+// Next Button
+nextbtn.addEventListener("click", () => {
+    if (currentIndx === visibleImages.length - 1) {
+        currentIndx = 0;
+    } else {
+        currentIndx++;
+    }
 
-    navLinks.forEach((link)=>{
+    largeImage.src = visibleImages[currentIndx].src;
+});
 
+// Close Lightbox
+closebtn.addEventListener("click", () => {
+    lightImage.style.display = "none";
+});
 
-        link.addEventListener("click",(e)=>{
+// Filter Images
+navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
 
-            e.preventDefault(); 
+        const filter = link.dataset.filter;
 
-           const filter =  link.dataset.filter;
+        imageCards.forEach((card) => {
+            const cardFilter = card.dataset.category;
 
-           imageCards.forEach((card)=>{
-
-           const cardFilter = card.dataset.category;
-
-            if(  filter === "all"){
-             card.style.display = "block";
-            }
-            else if(filter === cardFilter ){
-            card.style.display = "block";
-            }
-             else{
+            if (filter === "all" || filter === cardFilter) {
+                card.style.display = "block";
+            } else {
                 card.style.display = "none";
-             }
-             });
+            }
+        });
+
+        // Update visible images after filtering
+        visibleImages = [];
+
+        imageCards.forEach((card) => {
+            if (card.style.display !== "none") {
+                visibleImages.push(card.querySelector("img"));
+            }
         });
     });
+});
